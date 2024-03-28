@@ -608,7 +608,7 @@ setMethod("regionAggregation",
 		}
 		# DelayedArray
 		if (.object@diskDump){
-			rsFun <- BiocGenerics::rowSums
+			rsFun <- MatrixGenerics::rowSums
 		}
 
 		#sort the regions
@@ -837,7 +837,7 @@ setMethod("mergeSamples",
 		if(countAggrFun=="sum"){
 			mergeFun <- function(X){rowSums(X, na.rm=TRUE)}
 			if (.object@diskDump) {
-				mergeFun <- function(X){BiocGenerics::rowSums(X, na.rm=TRUE)}
+				mergeFun <- function(X){MatrixGenerics::rowSums(X, na.rm=TRUE)}
 			} else if (.object@sparseCounts) {
 				mergeFun <- function(X){Matrix::rowSums(X, na.rm=TRUE)}
 			}
@@ -1785,8 +1785,8 @@ setMethod("transformCounts",
 		}
 		# DelayedArray
 		if (.object@diskDump){
-			rsFun <- BiocGenerics::rowSums
-			csFun <- BiocGenerics::colSums
+			rsFun <- MatrixGenerics::rowSums
+			csFun <- MatrixGenerics::colSums
 		}
 
 		if (method == "quantile"){
