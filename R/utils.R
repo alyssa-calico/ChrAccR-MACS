@@ -253,7 +253,7 @@ safeMatrixStats <- function(X, statFun="rowSums", ...){
   	if (pkg=="Matrix") {
   		statFun <- paste0("Matrix::", statFun)
   	} else if (is.element(pkg, c("DelayedArray", "HDF5Array"))){
-  		statFun <- paste0("BiocGenerics::", statFun)
+  		statFun <- paste0("MatrixGenerics::", statFun)
   	}
   }
   # print(statFun)
