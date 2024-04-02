@@ -3150,7 +3150,7 @@ setMethod("callPeaks",
 		samples=getSamples(.object),
 		method='macs2_summit_fw_no',
 		methodOpts=list(
-			macs2.exec="macs2",
+			macs2.exec="/opt/miniconda3/bin/macs2",
 			macs2.params=c(
 				"--shift", "-75",
 				"--extsize", "150",
